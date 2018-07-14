@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine:3.8
 ENV PYTHONBUFFERED=1
 WORKDIR /app/server
 RUN apk add --no-cache python3 py3-psycopg2 py3-pillow libsass yarn && \
