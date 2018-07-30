@@ -15,7 +15,7 @@ build:
       - master
 
 
-build:
+build-brunch:
   stage: build
   script:
     - docker build -t registry.gitlab.com/codesigntheory/django-base:$CI_COMMIT_REF_NAME ./
