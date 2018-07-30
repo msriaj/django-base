@@ -9,4 +9,4 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y python3 python3-p
     ln -sf /usr/bin/python3 /usr/bin/python && \
     cd /app/ && yarn add babel-cli babel-preset-env babel-core babel-polyfill babel-preset-minify && cd /app/server && \
     mv /app/package.json /app/server/package.orig.json && ln -s /app/server/package.orig.json /app/package.json && \
-    apt-cache clean
+    apt-get clean
