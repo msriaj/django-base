@@ -13,3 +13,16 @@ build:
   only:
     refs:
       - master
+
+
+build:
+  stage: build
+  script:
+    - docker build -t registry.gitlab.com/codesigntheory/django-base:$CI_COMMIT_REF_NAME ./
+    - docker push registry.gitlab.com/codesigntheory/django-base:$CI_COMMIT_REF_NAME
+  tags:
+    - docker
+    - build
+  except:
+    refs:
+      - master
