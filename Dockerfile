@@ -2,7 +2,7 @@ FROM ubuntu:bionic
 ENV PYTHONBUFFERED=1
 WORKDIR /app/server
 RUN apt-get update && apt-get upgrade -y && apt-get install -y python3 python3-pip curl && \
-    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -y - && \
+    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && \
     apt-get update && apt-get install yarn && \
     touch /app/server/package.orig.json && \
