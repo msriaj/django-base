@@ -13,5 +13,5 @@ apt-get clean
 apt-get auto-clean
 
 for DIR in $DIRS_TO_TRIM; do
-  rm -rf "$DIR/*"
+  rm -rf $DIR/*
 done
