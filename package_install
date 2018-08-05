@@ -11,5 +11,5 @@ apt-get update -qq &&
 apt-get install -y "$@"
 
 for DIR in $DIRS_TO_TRIM; do
-  rm -r "$DIR"
+  rm -rf "$DIR"
 done
