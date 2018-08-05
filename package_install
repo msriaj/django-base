@@ -9,6 +9,7 @@ DIRS_TO_TRIM="/usr/share/man
 
 apt-get update -qq &&
 apt-get install -y "$@"
+apt-get clean
 
 for DIR in $DIRS_TO_TRIM; do
   rm -rf "$DIR"
