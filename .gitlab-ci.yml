@@ -4,9 +4,9 @@ stages:
 build:
   stage: build
   script:
-    - docker build -t registry.gitlab.com/codesigntheory/django-base:latest -t registry.gitlab.com/codesigntheory/django-base:3.8 ./
+    - docker build -t registry.gitlab.com/codesigntheory/django-base:latest -t registry.gitlab.com/codesigntheory/django-base:19.2 ./
     - docker push registry.gitlab.com/codesigntheory/django-base:latest
-    - docker push registry.gitlab.com/codesigntheory/django-base:3.8
+    - docker push registry.gitlab.com/codesigntheory/django-base:19.2
   tags:
     - docker
     - build
