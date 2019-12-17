@@ -4,7 +4,7 @@ stages:
 build:
   stage: build
   script:
-    - docker build -t registry.gitlab.com/codesigntheory/django-base:latest -t registry.gitlab.com/codesigntheory/django-base:19.12 ./
+    - docker build --pull -t registry.gitlab.com/codesigntheory/django-base:latest -t registry.gitlab.com/codesigntheory/django-base:19.12 ./
     - docker push registry.gitlab.com/codesigntheory/django-base:latest
     - docker push registry.gitlab.com/codesigntheory/django-base:19.12
   tags:
@@ -17,7 +17,7 @@ build:
 build-brunch:
   stage: build
   script:
-    - docker build -t registry.gitlab.com/codesigntheory/django-base:$CI_COMMIT_REF_NAME ./
+    - docker build --pull -t registry.gitlab.com/codesigntheory/django-base:$CI_COMMIT_REF_NAME ./
     - docker push registry.gitlab.com/codesigntheory/django-base:$CI_COMMIT_REF_NAME
   tags:
     - docker
