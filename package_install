@@ -7,6 +7,7 @@ DIRS_TO_TRIM="/usr/share/man
 /usr/share/info
 "
 
+
 apt-get update -qq &&
 apt-get install -y "$@"
 apt-get clean
