@@ -4,7 +4,8 @@ WORKDIR /app/server
 COPY package_install package_dist_upgrade /usr/sbin/
 RUN chmod 755 /usr/sbin/package_install /usr/sbin/package_dist_upgrade && \
     package_dist_upgrade && \
-    package_install python3 python3-pip curl apt-transport-https && \
+    package_install python3 curl apt-transport-https && \
+    python3 get-pip.py pip==19.3.1 && \
     ln -sf /usr/bin/pip3 /usr/bin/pip && \
     ln -sf /usr/bin/python3 /usr/bin/python && \
     pip install pipenv pdm
