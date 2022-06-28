@@ -5,23 +5,14 @@ build:
   stage: build
   script:
     - docker build --pull --no-cache -t registry.gitlab.com/codesigntheory/django-base:latest -t registry.gitlab.com/codesigntheory/django-base:22.06 ./
+    - docker build --pull --no-cache -t registry.gitlab.com/codesigntheory/django-base/django-base-reportgen:latest -t registry.gitlab.com/codesigntheory/django-base/django-base-reportgen:22.06 ./
     - docker push registry.gitlab.com/codesigntheory/django-base:latest
     - docker push registry.gitlab.com/codesigntheory/django-base:22.06
+    - docker push registry.gitlab.com/codesigntheory/django-base/django-base-reportgen:latest
+    - docker push registry.gitlab.com/codesigntheory/django-base/django-base-reportgen:22.06
   tags:
     - docker
     - build
   only:
-    refs:
-      - master
-
-build-brunch:
-  stage: build
-  script:
-    - docker build --no-cache --pull -t registry.gitlab.com/codesigntheory/django-base:$CI_COMMIT_REF_NAME ./
-    - docker push registry.gitlab.com/codesigntheory/django-base:$CI_COMMIT_REF_NAME
-  tags:
-    - docker
-    - build
-  except:
     refs:
       - master
