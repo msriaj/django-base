@@ -4,8 +4,8 @@ ENV PYTHONBUFFERED=1 \
     LANGUAGE=C.UTF-8 \
     LC_ALL=C.UTF-8 \
     DEBIAN_FRONTEND=noninteractive \
-    TZ=Asia/Dhaka
-
+    TZ=Asia/Dhaka \
+    PDM_USE_VENV=false
 WORKDIR /app/server
 COPY package_install package_dist_upgrade /usr/sbin/
 RUN chmod 755 /usr/sbin/package_install /usr/sbin/package_dist_upgrade && \
@@ -14,5 +14,4 @@ RUN chmod 755 /usr/sbin/package_install /usr/sbin/package_dist_upgrade && \
     curl https://bootstrap.pypa.io/get-pip.py | python3 - && \
     ln -sf /usr/bin/pip3 /usr/bin/pip && \
     ln -sf /usr/bin/python3 /usr/bin/python && \
-    pip install pdm && \
-    pdm config -g python.use_venv false
+    pip install pdm
