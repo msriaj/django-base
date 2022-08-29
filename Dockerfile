@@ -15,4 +15,4 @@ RUN chmod 755 /usr/sbin/package_install /usr/sbin/package_dist_upgrade && \
     ln -sf /usr/bin/pip3 /usr/bin/pip && \
     ln -sf /usr/bin/python3 /usr/bin/python && \
     pip install pdm && \
-    pdm config -g python.use_venv False
+    pdm config -g python.use_venv false
