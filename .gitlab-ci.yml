@@ -4,10 +4,10 @@ stages:
 build:
   stage: build
   script:
-    - docker buildx build --push --pull --no-cache --platform linux/amd64,linux/arm64 -t registry.gitlab.com/codesigntheory/django-base:latest -t registry.gitlab.com/codesigntheory/django-base:22.07.1 ./
+    - docker build --push --pull --no-cache -t registry.gitlab.com/codesigntheory/django-base:latest -t registry.gitlab.com/codesigntheory/django-base:22.07.1 ./
     # - docker push registry.gitlab.com/codesigntheory/django-base:latest
     # - docker push registry.gitlab.com/codesigntheory/django-base:22.07.1
-    - docker buildx build --push --pull --platform linux/amd64,linux/arm64 --no-cache -f DockerfileReportGen -t registry.gitlab.com/codesigntheory/django-base/django-base-reportgen:latest -t registry.gitlab.com/codesigntheory/django-base/django-base-reportgen:22.07.1 ./
+    - docker build --push --pull --no-cache -f DockerfileReportGen -t registry.gitlab.com/codesigntheory/django-base/django-base-reportgen:latest -t registry.gitlab.com/codesigntheory/django-base/django-base-reportgen:22.07.1 ./
     # - docker push registry.gitlab.com/codesigntheory/django-base/django-base-reportgen:latest
     # - docker push registry.gitlab.com/codesigntheory/django-base/django-base-reportgen:22.07.1
   tags:
