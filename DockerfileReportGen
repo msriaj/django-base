@@ -1,2 +1,2 @@
 FROM registry.gitlab.com/codesigntheory/django-base:22.11
-RUN package_install fontconfig libmagickwand-dev
+RUN package_install --no-install-recommends fontconfig libmagickwand-dev
