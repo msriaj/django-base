@@ -9,5 +9,5 @@ ENV PYTHONBUFFERED=1 \
 WORKDIR /app/server
 COPY package_install package_dist_upgrade /usr/sbin/
 RUN chmod 755 /usr/sbin/package_install /usr/sbin/package_dist_upgrade && \
-    package_dist_upgrade && package_install gcc libpq-dev \
+    package_dist_upgrade && package_install gcc libpq-dev && \
     pip install pdm
