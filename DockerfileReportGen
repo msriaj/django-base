@@ -1,2 +1,2 @@
-FROM registry.gitlab.com/codesigntheory/django-base:23.03
+FROM registry.gitlab.com/codesigntheory/django-base:23.05
 RUN package_install --no-install-recommends gcc libpq-dev fontconfig libmagickwand-dev libgdk-pixbuf2.0-0 imagemagick

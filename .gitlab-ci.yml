@@ -6,12 +6,12 @@ build:
   before_script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
   script:
-    - docker build --pull --no-cache -t registry.gitlab.com/codesigntheory/django-base:latest -t registry.gitlab.com/codesigntheory/django-base:23.03 ./
+    - docker build --pull --no-cache -t registry.gitlab.com/codesigntheory/django-base:latest -t registry.gitlab.com/codesigntheory/django-base:23.05 ./
     - docker push registry.gitlab.com/codesigntheory/django-base:latest
-    - docker push registry.gitlab.com/codesigntheory/django-base:23.03
-    - docker build --pull --no-cache -f DockerfileReportGen -t registry.gitlab.com/codesigntheory/django-base/django-base-reportgen:latest -t registry.gitlab.com/codesigntheory/django-base/django-base-reportgen:23.03 ./
+    - docker push registry.gitlab.com/codesigntheory/django-base:23.05
+    - docker build --pull --no-cache -f DockerfileReportGen -t registry.gitlab.com/codesigntheory/django-base/django-base-reportgen:latest -t registry.gitlab.com/codesigntheory/django-base/django-base-reportgen:23.05 ./
     - docker push registry.gitlab.com/codesigntheory/django-base/django-base-reportgen:latest
-    - docker push registry.gitlab.com/codesigntheory/django-base/django-base-reportgen:23.03
+    - docker push registry.gitlab.com/codesigntheory/django-base/django-base-reportgen:23.05
   after_script:
     - docker logout $CI_REGISTRY
   tags:
