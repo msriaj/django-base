@@ -1,4 +1,4 @@
-FROM python:3.11-slim-bookworm
+FROM python:3.12-slim-bookworm
 ENV PYTHONBUFFERED=1 \
     LANG=C.UTF-8 \
     LANGUAGE=C.UTF-8 \
